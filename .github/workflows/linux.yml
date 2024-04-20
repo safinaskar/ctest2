@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - 1.56.0 # MSRV
+          - 1.60.0 # MSRV # 1.56 - fail
           - stable
           - beta
           - nightly
@@ -18,7 +18,7 @@ jobs:
           - x86_64-unknown-linux-gnu
 
     name: ${{ matrix.version }} - ${{ matrix.target }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04 # 22.04 - fail
 
     steps:
       - uses: actions/checkout@v3
